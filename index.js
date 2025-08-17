@@ -7,11 +7,9 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
-// Import routes
-const userRoutes = require('./routes/userRoutes');
+const userRoute = require('./routes/userRoutes');
 
-// Use routes with prefix /users
-app.use('/users', userRoutes);
+app.use('/api', userRoute);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
